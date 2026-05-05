@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RakibOne8 | DOM</title>
+</head>
+<body style="background-color: black;color: whitesmoke;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    const addLanguage = (langName) => {
+        const li = document.createElement('li')
+        li.innerText = langName
+        const parent = document.querySelector('.language')
+        parent.appendChild(li)
+        // console.log(li);
+        
+    }
+    addLanguage('C++')
+    addLanguage('typescript')
+
+
+    const addOptimally = (langName)=>{
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptimally('golang')
+
+
+    //Edit
+
+    const item = document.querySelector('li:nth-child(2)')
+    const new_item = document.createElement('li')
+    new_item.textContent = "Ruby"
+    item.replaceWith(new_item)
+
+    //Edit
+
+    const item2 = document.querySelector('li:nth-child(1)')
+    item2.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+
+    const item3 = document.querySelector('li:last-child')
+    item3.remove()
+
+</script>
+</html>
